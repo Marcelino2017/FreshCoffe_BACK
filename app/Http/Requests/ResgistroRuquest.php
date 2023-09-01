@@ -32,4 +32,15 @@ class ResgistroRuquest extends FormRequest
             ],
         ];
     }
+
+    public function messages()
+    {
+        return [
+            'name' => 'El Nombre es obligatorio',
+            'email.required' => 'El Email es obligatorio',
+            'email.email' => 'El Email no es válido',
+            'email.unique' => 'El usuario ya esta registrado',
+            'password' => 'La confirmación del campo de contraseña no coincide. El campo de contraseña debe tener al menos 8 caracteres.'
+        ];
+    }
 }
