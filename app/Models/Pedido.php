@@ -16,6 +16,10 @@ class Pedido extends Model
 
     public function productos()
     {
-        return $this->belongsToMany(Producto::class, 'pedido_productos');
+        /*
+        * Relación de mucho a mucho con taba pivote
+        * indicamos que otro campo de la tabla pivote se desea traer
+        */
+        return $this->belongsToMany(Producto::class, 'pedido_productos')->withPivot('cantidad');
     }
 }
