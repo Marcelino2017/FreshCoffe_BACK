@@ -26,11 +26,10 @@ Route::middleware('auth:sanctum')->group(function ()  {
 
     //Almacenar pedidos
     Route::apiResource('/pedidos', PedidoController::class);
+
+    Route::apiResource('/categoria', CategoriaController::class);
+    Route::apiResource('/productos', ProductoController::class);
 });
-
-Route::apiResource('/categoria', CategoriaController::class);
-Route::apiResource('/productos', ProductoController::class);
-
 
 //Authenticacion
 Route::post('/registro', [AuthController::class, 'register']);
